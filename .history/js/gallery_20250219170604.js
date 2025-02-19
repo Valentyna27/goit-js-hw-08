@@ -86,12 +86,12 @@ itemListForGallery.addEventListener('click', function (event) {
     const originalImage = event.target.getAttribute('data-source');
     console.log(`${originalImage}`);
 
-    basicLightbox
-      .create(
-        `<div class="modal">
-        <img src="${originalImage}" alt="Full size of image" />
-        </div>`
-      )
-      .show();
+    // basicLightbox
+    //   .create(
+    //     `<div class="modal">
+    //     <img src="${originalImage}" alt="Full size of image" />
+    //     </div>`
+    //   )
+    //   .show();
   }
 });

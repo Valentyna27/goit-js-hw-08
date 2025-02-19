@@ -80,6 +80,7 @@ const markup = images
   )
   .join('');
 itemListForGallery.insertAdjacentHTML('beforeend', markup);
+document.querySelectorAll('.gallery-link').forEach(function (link) {
 itemListForGallery.addEventListener('click', function (event) {
   event.preventDefault();
   if (event.target.nodeName === 'IMG') {
@@ -91,7 +92,7 @@ itemListForGallery.addEventListener('click', function (event) {
         `<div class="modal">
         <img src="${originalImage}" alt="Full size of image" />
         </div>`
-      )
-      .show();
+      ).show();
   }
+});
 });

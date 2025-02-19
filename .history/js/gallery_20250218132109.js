@@ -80,18 +80,22 @@ const markup = images
   )
   .join('');
 itemListForGallery.insertAdjacentHTML('beforeend', markup);
-itemListForGallery.addEventListener('click', function (event) {
-  event.preventDefault();
-  if (event.target.nodeName === 'IMG') {
-    const originalImage = event.target.getAttribute('data-source');
-    console.log(`${originalImage}`);
+document.querySelectorAll('.gallery-link').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    if (event.target.nodeName === 'IMG') {
+      event.preventDefault();
 
-    basicLightbox
-      .create(
-        `<div class="modal">
+      const originalImage = link
+        .querySelector('img')
+        .getAttribute('data-source');
+      console.log(`${originalImage}`);
+      basicLightbox
+        .create(
+          `<div class="modal">
         <img src="${originalImage}" alt="Full size of image" />
         </div>`
-      )
-      .show();
-  }
+        )
+        .show();
+    }
+  });
 });

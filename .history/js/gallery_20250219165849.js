@@ -91,7 +91,6 @@ itemListForGallery.addEventListener('click', function (event) {
         `<div class="modal">
         <img src="${originalImage}" alt="Full size of image" />
         </div>`
-      )
-      .show();
+      ).show();
   }
 });
